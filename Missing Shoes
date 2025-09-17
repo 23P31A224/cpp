@@ -1,0 +1,16 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+    int a,b;
+    cin>>a>>b;
+    if(a>b){
+        int r1=a-b;
+        cout<<r1;
+    }
+    else{
+        int r2=b-a;
+        cout<<r2;
+    }
+}
