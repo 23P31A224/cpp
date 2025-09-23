@@ -1,0 +1,23 @@
+#include<iostream>
+#include<string>
+#include<unordered_map>
+using namespace std;
+class Solution {
+public:
+    bool isIsomorphic(string s, string t) {
+        if(s.size() ==t.size()){
+            unordered_map<char, char> mapST;
+            unordered_map<char, char> mapTT;
+            for(int i=0;i<s.size();i++){
+                char s1=s[i];
+                char t1=t[i];
+                if(mapST.count(s1)&& mapST[s1]!=t1)  return false;
+                if(mapTT.count(t1)&& mapTT[t1]!=s1) return false;
+
+                mapST[s1] = t1;
+                mapTT[t1] = s1;
+            }
+        }
+        return true;
+    }
+};
