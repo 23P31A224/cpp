@@ -1,0 +1,43 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+using ll = long long;
+using vi = vector < int > ;
+
+void s()
+{
+    int n, m;
+    cin >> n >> m;
+    string str;
+    cin >> str;
+    if (n % 2 != 0)
+    {
+        cout << "No" << endl;
+        return;
+    }
+    int a_s = accumulate(str.begin(), str.end(), 0, [](int sum, char c) {
+        return sum + (c - '0');
+    });
+
+    int rem = n - m;
+    int target = n / 2;
+    if (a_s <= target && target <= a_s + rem)
+    {
+        cout << "Yes" << endl;
+    }
+    else
+    {
+        cout << "No" << endl;
+    }
+}
+
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    int t;
+    cin >> t;
+    while (t--)
+        s();
+}
