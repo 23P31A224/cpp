@@ -1,0 +1,57 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+#define ll long long int
+
+
+void solve() {
+  std::ios_base::sync_with_stdio(false);
+
+  //TAKING INPUTS
+  ll n;
+  cin>>n;
+  vector<ll>a(n);
+  for (int i=0 ; i<n ; i++) {
+    cin>>a[i];
+  }
+
+  //TO CHECK IF ALL THE ODD PLACES (OR) ALL THE EVEN PLACES
+  //ARE FILLED UP WITH 2's 
+  int e_places=0, o_places=0;
+  for (int i=0 ; i<n ; i+=2) {
+    if (a[i]==2) {
+      e_places++;
+    }
+  }
+
+  for (int i=1 ; i<n ; i+=2) {
+    if (a[i]==2) {
+      o_places++;
+    }
+  }
+  
+  //CHECKING FOR CASES
+  if (e_places == (n+1)/2) {
+    cout << "Yes" << endl;
+    return;
+  }
+  else if (o_places == n/2) {
+    cout << "Yes" << endl;
+    return;
+  }
+
+  //IF NONE OF THE ABOVE CASES ARE SATISFIED
+  cout << "No" << endl;
+  return;
+}
+
+int main() {
+  std::ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
+  cout.tie(NULL);
+  long long int t;
+  cin >> t;
+  while (t--)
+    solve();
+  return 0;
+}
