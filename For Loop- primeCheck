@@ -1,0 +1,38 @@
+class Solution {
+public:
+    /**
+     * @brief Checks if a number n is prime.
+     * @param n The integer to check.
+     * @return "Yes" if n is prime, "No" otherwise.
+     */
+    string isPrime(int n) {
+        // 1. Handle base cases: 1 and numbers less than 1 are not prime.
+        if (n <= 1) {
+            return "No";
+        }
+        
+        // 2. Handle 2: the only even prime number.
+        if (n == 2) {
+            return "Yes";
+        }
+        
+        // 3. Handle all other even numbers (n > 2).
+        // If n is divisible by 2, it is not prime.
+        if (n % 2 == 0) {
+            return "No";
+        }
+        
+        // 4. Check for odd divisors from 3 up to sqrt(n).
+        // Using i * i <= n avoids repeated calls to sqrt() and potential floating point issues.
+        // We only check odd numbers by incrementing i by 2.
+        for (int i = 3; i * i <= n; i += 2) {
+            if (n % i == 0) {
+                // Found a divisor, so it's not prime.
+                return "No";
+            }
+        }
+        
+        // If the loop completes without finding any divisors, the number is prime.
+        return "Yes";
+    }
+};
