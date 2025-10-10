@@ -1,0 +1,27 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	const int MAX=109;
+	int x[MAX],y[MAX];
+int t;
+cin>>t;
+while(t--)
+{
+  int n,a,b;
+  cin>>n>>a>>b;
+  for(int i=0;i<n;i++)
+  {
+     cin>>x[i]>>y[i];
+  }
+  int mindis=INT_MAX;
+  for(int i=0;i<n;i++)
+  {
+  int d=abs(x[i]-a)+abs(y[i]-b);
+  if(d<mindis)
+  mindis=d;
+  }
+  cout<<mindis<<endl;
+}
+}
