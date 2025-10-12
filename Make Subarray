@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        string s;
+        cin >> s;
+
+        int left = 0, right = n - 1;
+        int count = 0;
+
+        
+        while (left < n && s[left] == '0') left++;
+        while (right >= 0 && s[right] == '0') right--;
+
+        if (left < right) {
+            for (int i = left; i <= right; i++) {
+                if (s[i] == '0') count++;
+            }
+        }
+
+        cout << count << endl;
+    }
+}
