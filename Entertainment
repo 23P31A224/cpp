@@ -1,0 +1,14 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N;
+
+    int costWithTV = 1000;
+    int costWithToys = 200 * N;
+
+    cout << min(costWithTV, costWithToys) << endl;
+
+    return 0;
+}
