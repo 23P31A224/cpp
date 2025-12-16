@@ -1,0 +1,13 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	 int X, H;
+    cin >> X >> H;
+
+    int totalHours = (X - 4) * 24 + H;
+    cout << totalHours << endl;
+
+    return 0;
+
+}
