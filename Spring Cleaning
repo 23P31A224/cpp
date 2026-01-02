@@ -1,0 +1,12 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int X, Y;
+    cin >> X >> Y;  
+
+    int totalMinutes = X * 30 + Y * 60;  // total cleaning time
+    cout << totalMinutes << endl;
+
+    return 0;
+}
